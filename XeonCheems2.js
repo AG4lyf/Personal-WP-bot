@@ -1186,7 +1186,7 @@ In ${clockString(new Date - user.afkTime)}
 			let remobg = require('remove.bg')
 			let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU', 'S258diZhcuFJooAtHTaPEn4T', '5LjfCVAp4vVNYiTjq9mXJWHF', 'aT7ibfUsGSwFyjaPZ9eoJc61', 'BY63t7Vx2tS68YZFY6AJ4HHF', '5Gdq1sSWSeyZzPMHqz7ENfi8', '86h6d6u4AXrst4BVMD9dzdGZ', 'xp8pSDavAgfE5XScqXo9UKHF', 'dWbCoCb3TacCP93imNEcPxcL']
 			let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
-			hmm = await './src/remobg-' + getRandom('')
+			hmm = './src/remobg-' + getRandom('')
 			localFile = await XeonBotInc.downloadAndSaveMediaMessage(quoted, hmm)
 			outputFile = await './src/hremo-' + getRandom('.png')
 			reply(mess.wait)
@@ -2288,26 +2288,24 @@ In ${clockString(new Date - user.afkTime)}
 				}).catch((err) => m.reply(`*Sorry Instagram Instagram ${text} Not found*, ${err}`))
 		}
 		break
-		//Backup, for example, the video above doesn't come out\\
-		case 'igeh':
-		case 'instagram2x':
-		case 'ig2':
-		case 'igdl2': {
-			if (!text) return reply(`Enter Query Link!`)
-			reply(mess.wait)
+        case 'igs': 
+        case 'igstory': 
+        case 'instagramstory': {       
+            let urlnya = text
+            hx.igstory(urlnya).then(async(result) => {
+            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*⬤ Username :* ${result.user.username}\n*⬤ Fullname :* ${result.user.fullName}\n*⬤ Followers :* ${result.user.followers}\n*⬤ Following :* ${result.user.following}\n*⬤ ID :* ${result.user.id}\n*⬤ Filetype :* ${result.medias[0].fileType}\n*⬤ Type :* ${result.medias[0].type}\n*⬤ Media :* ${result.medias.length}\n*⬤ Bio :* ${result.user.biography}` }, { quoted: m })	             	                      	            
+            for(let i of result.medias) {
+            if(i.url.includes('mp4')){
+            let link = await getBuffer(i.url)
+            XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
+            } else {
+                let link = await getBuffer(i.url)
+                XeonBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })
+            }
+        }
 
-			let anu = await fetchJson(api('zenz', '/downloader/instagram2', {
-				url: text
-			}, 'apikey'))
-			XeonBotInc.sendMessage(m.chat, {
-				video: {
-					url: anu.data[0]
-				}
-			}, {
-				quoted: m
-			})
-		}
-		break
+        }).catch((err) => m.reply(`*Sorry Story Instagram ${text} not found*, ${err}`))
+        }		
 		case 'joox':
 		case 'jooxdl': {
 			if (!text) return reply(`No Query Title`)
