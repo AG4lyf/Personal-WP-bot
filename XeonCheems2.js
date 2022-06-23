@@ -1683,7 +1683,7 @@ In ${clockString(new Date - user.afkTime)}
 		case 'bucinquote':
 		case 'katasenja':
 		case 'puisi': {
-			let anu = await fetchJson(api('zenz', '/api/' + command, {}, 'apikey'))
+			let anu = await fetchJson(api('zenz', '/randomtext/' + command, {}, 'apikey'))
 			let buttons = [{
 				buttonId: `motivasi`,
 				buttonText: {
