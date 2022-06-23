@@ -2244,20 +2244,47 @@ In ${clockString(new Date - user.afkTime)}
 		break
 		case 'instagramx':
 		case 'igx':
+		case 'ig':
+		case 'instagram':
 		case 'igdlx': {
-			if (!text) return reply(`No Query Url!`)
-			reply(mess.wait)
-			if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
-				let anu = await fetchJson(api('zenz', '/downloader/instagram2', {
-					url: isUrl(text)[0]
-				}, 'apikey'))
-				for (let media of anu.data) XeonBotInc.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
-			} else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
-				let anu = await fetchJson(api('zenz', '/downloader/instastory', {
-					url: isUrl(text)[0]
-				}, 'apikey'))
-				XeonBotInc.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
-			}
+			if (!isUrl(args[0]) && !args[0].includes('instagram.com')) throw '*The link you provided is not valid*'
+
+			let urlnya = text
+
+			hx.igdl(urlnya)
+
+				.then(async (result) => {
+					XeonBotInc.sendMessage(m.chat, {
+						image: {
+							url: result.user.profilePicUrl
+						},
+						jpegThumbnail: await getBuffer(result.user.profilePicUrl),
+						caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*⬤ Username :* ${result.user.username}\n*⬤ Fullname :* ${result.user.fullName}\n*⬤ Followers :* ${result.user.followers}\n*⬤ Following :* ${result.user.following}\n*⬤ ID :* ${result.user.id}\n*⬤ Filetype :* ${result.medias[0].fileType}\n*⬤ Type :* ${result.medias[0].type}\n*⬤ Jumlah Media :* ${result.medias.length}\n*⬤ Url :* ${text}`
+					}, {
+						quoted: m
+					})
+					for (let i of result.medias) {
+						if (i.url.includes('mp4')) {
+							let link = await getBuffer(i.url)
+							XeonBotInc.sendMessage(m.chat, {
+								video: link,
+								jpegThumbnail: await getBuffer(i.preview),
+								caption: `*Instagram ${i.type}*`
+							}, {
+								quoted: m
+							})
+						} else {
+							let link = await getBuffer(i.url)
+							XeonBotInc.sendMessage(m.chat, {
+								image: link,
+								jpegThumbnail: await getBuffer(i.preview),
+								caption: `*Instagram ${i.type}*`
+							}, {
+								quoted: m
+							})
+						}
+					}
+				}).catch((err) => m.reply(`*Sorry Instagram Instagram ${text} Not found*, ${err}`))
 		}
 		break
 		//Backup, for example, the video above doesn't come out\\
