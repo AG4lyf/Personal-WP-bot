@@ -744,12 +744,7 @@ In ${clockString(new Date - user.afkTime)}
 				teksehmazeh += `*🐄Cow* : ${getSapi(m.sender)}\n`
 				teksehmazeh += `*🐘Elephant* : ${getGajah(m.sender)}\n\n`
 				teksehmazeh += `_*${pushname}*_`
-				await XeonBotInc.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, xeonbotinc, [{
-					"urlButton": {
-						"displayText": "YouTube📍",
-						"url": `${myweb}`
-					}
-				}])
+				await XeonBotInc.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, xeonbotinc, [])
 			}
 			break
 		case 'userlimit': {
@@ -1542,8 +1537,8 @@ Cieeee, What's Going On❤️💖👀`
 			})
 			break
 		case 'charactercheck':
-			//YouTube📍 by xeon⛔\\
-			if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+			//📍 by xeon⛔\\
+			if (!text) return replay(`Tag Someone, Example : ${prefix + command} @someone`)
 			const xeony = ['Compassionate', 'Generous', 'Grumpy', 'Forgiving', 'Obedient', 'Good', 'Simp', 'Kind-Hearted', 'patient', 'UwU', 'top, anyway', 'Helpful']
 			const taky = xeony[Math.floor(Math.random() * xeony.length)]
 			XeonBotInc.sendMessage(from, {
@@ -2209,25 +2204,10 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 			reply(`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
 			for (let i of anu) {
 				await sleep(1500)
-				let btn = [{
-					urlButton: {
-						displayText: 'Script🔖',
-						url: `${sc}`
-					}
-				}, {
-					urlButton: {
-						displayText: 'YouTube📍',
-						url: `${myweb}`
-					}
-				}, {
+				let btn = [ {
 					quickReplyButton: {
 						displayText: '🎀Menu🎀',
 						id: 'menu'
-					}
-				}, {
-					quickReplyButton: {
-						displayText: '👤Owner👤',
-						id: 'owner'
 					}
 				}]
 				let txt = `「 Cheems Bot Broadcast 」\n\n${text}`
@@ -2246,26 +2226,11 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 			for (let yoi of anu) {
 				await sleep(1500)
 				let btn = [{
-					urlButton: {
-						displayText: 'Script🔖',
-						url: `${sc}`
-					}
-				}, {
-					urlButton: {
-						displayText: 'YouTube📍',
-						url: `${myweb}`
-					}
-				}, {
 					quickReplyButton: {
 						displayText: '🎀Menu🎀',
 						id: 'menu'
 					}
-				}, {
-					quickReplyButton: {
-						displayText: '👤Owner👤',
-						id: 'owner'
-					}
-				}]
+				}, ]
 				let txt = `「 Cheems Bot Broadcast 」\n\n${text}`
 				XeonBotInc.send5ButImg(yoi, txt, XeonBotInc.user.name, global.thumb, btn)
 			}
@@ -2580,7 +2545,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 			if (!text) return replay(`Example : ${prefix + command} Anime Story Whatsapp`)
 			let yts = require("yt-search")
 			let search = await yts(text)
-			let teks = 'YouTube Search\n\n Result From ' + text + '\n\n'
+			let teks = ' Search\n\n Result From ' + text + '\n\n'
 			let no = 1
 			for (let i of search.all) {
 				teks += `🐶 No : ${no++}\n🐶 Type : ${i.type}\n🐶 Video ID : ${i.videoId}\n🐶 Title : ${i.title}\n🐶 Views : ${i.views}\n🐶 Duration : ${i.timestamp}\n🐶 Uploaded On : ${i.ago}\n🐶 Author : ${i.author.name}\n🐶 Url : ${i.url}\n\n─────────────────\n\n`
@@ -2866,12 +2831,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 						txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
 					}
 					let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com', ''))
-					var but = [{
-						"urlButton": {
-							"displayText": "YouTube📍",
-							"url": `${myweb}`
-						}
-					}]
+					var but = []
 					await XeonBotInc.send5ButLoc(from, txt, `© ${ownername}`, gam, but, {
 						userJid: m.chat,
 						quoted: m
@@ -2891,12 +2851,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 						txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
 					}
 					let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com', ''))
-					var but = [{
-						"urlButton": {
-							"displayText": "YouTube📍",
-							"url": `${myweb}`
-						}
-					}]
+					var but = []
 					await XeonBotInc.send5ButLoc(from, txt, `© ${ownername}`, gam, but, {
 						userJid: m.chat,
 						quoted: m
@@ -4473,25 +4428,13 @@ Report Message: ${text}`
 │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 │✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-│✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-│✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
 │✙ 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
    │✑  Please Select The Button Below
    └───────────────┈ ⳹`,
-						hydratedButtons: [{
-							urlButton: {
-								displayText: 'YouTube📍',
-								url: `${myweb}`
-							}
-						}, {
-							urlButton: {
-								displayText: 'Script🔖',
-								url: `${sc}`
-							}
-						}, {
+						hydratedButtons: [ {
 							quickReplyButton: {
 								displayText: '🍇All Menu🍇',
 								id: `${prefix}allmenu`
@@ -4501,12 +4444,7 @@ Report Message: ${text}`
 								displayText: '🍒List Menu🍒',
 								id: `${prefix}command`
 							}
-						}, {
-							quickReplyButton: {
-								displayText: '👤Owner👤',
-								id: `${prefix}owner`
-							}
-						}]
+						}, ]
 					}
 				}
 			}), {
@@ -4549,17 +4487,7 @@ Report Message: ${text}`
 └┬──────────────┈ ⳹
    │✑  Please Select The Button Below
    └───────────────┈ ⳹`,
-						hydratedButtons: [{
-							urlButton: {
-								displayText: 'YouTube📍',
-								url: `${myweb}`
-							}
-						}, {
-							urlButton: {
-								displayText: 'Script🔖',
-								url: `${sc}`
-							}
-						}, {
+						hydratedButtons: [ {
 							quickReplyButton: {
 								displayText: '🍇All Menu🍇',
 								id: `${prefix}allmenu`
@@ -4569,12 +4497,7 @@ Report Message: ${text}`
 								displayText: '🍒List Menu🍒',
 								id: `${prefix}command`
 							}
-						}, {
-							quickReplyButton: {
-								displayText: '👤Owner👤',
-								id: `${prefix}owner`
-							}
-						}]
+						}, ]
 					}
 				}
 			}), {
@@ -4682,14 +4605,6 @@ Report Message: ${text}`
 								"description": "Displays The List Of Anonymous Chat Features",
 								"rowId": `${prefix}anonymouschatmenu`
 							}]
-						},
-						{
-							"title": "Credit",
-							"rows": [{
-								"title": "Thanks To",
-								"description": "Displays The List Of Credit Of The Bot !!",
-								"rowId": `${prefix}tqtt`
-							}]
 						}
 					],
 					listType: 1
@@ -4700,43 +4615,19 @@ Report Message: ${text}`
 			})
 		}
 		break
-		case 'donasi':
-		case 'donate':
-		case 'sewabot':
-		case 'sewa':
-		case 'buypremium':
-		case 'donate': {
-			XeonBotInc.sendMessage(m.chat, {
-				image: {
-					url: 'https://telegra.ph/file/6ba2aed566865a068e91f.jpg'
-				},
-				caption: `*Hi Bro ${m.pushName}*\n\nDonate Me : \n\n🐶 Fampay : https://telegra.ph/file/6ba2aed566865a068e91f.jpg\n🐶 Paytm : https://telegra.ph/file/577bd4f28d90ca2c7f369.jpg\n\nIf You Want To Donate, Talk With The Owner First\nwa.me/916909137213 (Click To Contact)`
-			}, {
-				quoted: m
-			})
-		}
-		break
-		case 'sc':
-		case 'script': {
-			reply(`GitHub : https://github.com/DGXeon/CheemsBot-MD2\n Dont Forget To Give Star\n\nYouTube : ${myweb}\nDont Forget To Watch Tutorial`)
-		}
-		break
 		case 'allmenu': {
 			anu = `
 ┏━「 *${botname}* 」━━⭓ 
 ┃╔═══════✪「 MAIN 」
 ┃╠ ${prefix}alive
-┃╠ ${prefix}script
 ┃╠ ${prefix}speedtest
 ┃╠ ${prefix}ping
-┃╠ ${prefix}owner
 ┃╠ ${prefix}menu
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
 ┃╠ ${prefix}quoted
 ┃╠ ${prefix}listpc
 ┃╠ ${prefix}listgc
-┃╠ ${prefix}donate
 ┃╠ ${prefix}report [bug]
 ┃╠═══════✪「 OWNER 」	
 ┃╠ ${prefix}chat [option]
@@ -4959,17 +4850,7 @@ Report Message: ${text}`
 							jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')
 						},
 						hydratedFooterText: `${pushname}`,
-						hydratedButtons: [{
-							urlButton: {
-								displayText: 'YouTube📍',
-								url: `${myweb}`
-							}
-						}, {
-							quickReplyButton: {
-								displayText: '👤Owner👤',
-								id: `${prefix}owner`
-							}
-						}]
+						hydratedButtons: []
 					}
 				}
 			}), {
@@ -4986,7 +4867,6 @@ Report Message: ${text}`
 ┏━「 ${botname} 」━━⭓ 
 ┃╔═══════✪「 MAIN 」
 ┃╠ ${prefix}alive
-┃╠ ${prefix}script
 ┃╠ ${prefix}speedtest
 ┃╠ ${prefix}ping
 ┃╠ ${prefix}owner
@@ -4996,30 +4876,9 @@ Report Message: ${text}`
 ┃╠ ${prefix}quoted
 ┃╠ ${prefix}listpc
 ┃╠ ${prefix}listgc
-┃╠ ${prefix}donate
 ┃╠ ${prefix}report [bug]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube 📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 
 		case 'grupmenu':
@@ -5049,27 +4908,7 @@ Report Message: ${text}`
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 
 		case 'rpgmenu':
@@ -5087,27 +4926,7 @@ Report Message: ${text}`
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 
 		case 'funmenu':
@@ -5160,27 +4979,7 @@ Report Message: ${text}`
 ┃╠ ${prefix}math [mode]
 ┃╠ ${prefix}suitpvp [tag]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 
 		case 'ownermenu':
@@ -5209,27 +5008,7 @@ Report Message: ${text}`
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'downloadmenu':
 			var unicorn = await getBuffer(picak + 'Downloader Menu')
@@ -5244,27 +5023,7 @@ Report Message: ${text}`
 ┃╠${prefix}joox [query]
 ┃╠${prefix}soundcloud [url]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'searchmenu':
 			var unicorn = await getBuffer(picak + 'Search Menu')
@@ -5283,27 +5042,7 @@ Report Message: ${text}`
 ┃╠${prefix}ringtone [query]
 ┃╠${prefix}webtoon [query]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'randommenu':
 			var unicorn = await getBuffer(picak + 'Random Menu')
@@ -5314,27 +5053,7 @@ Report Message: ${text}`
 ┃╠${prefix}animequote (indo)
 ┃╠${prefix}couplepp
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'randomanimemenu':
 			var unicorn = await getBuffer(picak + 'Random Anime Menu')
@@ -5369,27 +5088,7 @@ Report Message: ${text}`
 ┃╠${prefix}dance
 ┃╠${prefix}cringe
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'textpromenu':
 			var unicorn = await getBuffer(picak + 'Text Pro Menu')
@@ -5428,27 +5127,7 @@ Report Message: ${text}`
 ┃╠ ${prefix}blackpink [txt]
 ┃╠ ${prefix}gluetext [txt]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'convertmenu':
 			var unicorn = await getBuffer(picak + 'Converter Menu')
@@ -5467,27 +5146,7 @@ Report Message: ${text}`
 ┃╠ ${prefix}ebinary [reply txt]
 ┃╠ ${prefix}dbinary [reply txt]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'databasemenu':
 			var unicorn = await getBuffer(picak + 'Database Menu')
@@ -5503,27 +5162,7 @@ Report Message: ${text}`
 ┃╠ ${prefix}getmsg
 ┃╠ ${prefix}delmsg
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'databasemenu':
 			var unicorn = await getBuffer(picak + 'Database Menu')
@@ -5535,27 +5174,7 @@ Report Message: ${text}`
 ┃╠${prefix}next
 ┃╠${prefix}leave
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'islamicmenu':
 			var unicorn = await getBuffer(picak + 'Islamic Menu')
@@ -5564,27 +5183,7 @@ Report Message: ${text}`
 ┃╔══✪「 ISLAMIC 」	        
 ┃╠${prefix}juzamma
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'voicechangermenu':
 			var unicorn = await getBuffer(picak + 'Voice Changer Menu')
@@ -5603,27 +5202,7 @@ Report Message: ${text}`
 ┃╠${prefix}slow [reply aud]
 ┃╠${prefix}squirrel [reply aud]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		case 'horoscopemenu':
 			var unicorn = await getBuffer(picak + 'Horoscope Menu')
@@ -5661,58 +5240,7 @@ Report Message: ${text}`
 ┃╠${prefix}zodiak (indo)
 ┃╠${prefix}shio (indo)
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
-			break
-		case 'thanksto':
-		case 'tqto':
-		case 'tqtt':
-			var unicorn = await getBuffer(picak + 'Developer')
-			await XeonBotInc.send5ButImg(from, `` + '' + ' ', `
-Thanks to
-LORD BUDDHA
-Xeon (Me)
-My family
-And All Friends Who Helped Assemble This Sexy Script !!!`, unicorn, [{
-				"urlButton": {
-					"displayText": "YouTube📍",
-					"url": `${myweb}`
-				}
-			}, {
-				"urlButton": {
-					"displayText": "Script🔖",
-					"url": `${sc}`
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "🍜Donate🍜",
-					"id": 'donate'
-				}
-			}, {
-				"quickReplyButton": {
-					"displayText": "👤Owner👤",
-					"id": 'owner'
-				}
-			}])
+┗━━「 ${pushname} 」━⭓`, unicorn, [])
 			break
 		default:
 			if (budy.startsWith('=>')) {
