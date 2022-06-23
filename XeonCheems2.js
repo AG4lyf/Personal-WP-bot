@@ -2292,19 +2292,19 @@ In ${clockString(new Date - user.afkTime)}
         case 'igstory': 
         case 'instagramstory': {       
             let urlnya = text
-            hx.igstory(urlnya).then(async(result) => {
-            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*⬤ Username :* ${result.user.username}\n*⬤ Fullname :* ${result.user.fullName}\n*⬤ Followers :* ${result.user.followers}\n*⬤ Following :* ${result.user.following}\n*⬤ ID :* ${result.user.id}\n*⬤ Filetype :* ${result.medias[0].fileType}\n*⬤ Type :* ${result.medias[0].type}\n*⬤ Media :* ${result.medias.length}\n*⬤ Bio :* ${result.user.biography}` }, { quoted: m })	             	                      	            
-            for(let i of result.medias) {
-            if(i.url.includes('mp4')){
-            let link = await getBuffer(i.url)
-            XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
-            } else {
-                let link = await getBuffer(i.url)
-                XeonBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })
+            hx.igstory(urlnya).then(result => {
+                XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*⬤ Username :* ${result.user.username}\n*⬤ Fullname :* ${result.user.fullName}\n*⬤ Followers :* ${result.user.followers}\n*⬤ Following :* ${result.user.following}\n*⬤ ID :* ${result.user.id}\n*⬤ Filetype :* ${result.medias[0].fileType}\n*⬤ Type :* ${result.medias[0].type}\n*⬤ Media :* ${result.medias.length}\n*⬤ Bio :* ${result.user.biography}` }, { quoted: m })	             	                      	            
+                for(let i of result.medias) {
+                    if(i.url.includes('mp4')){
+                        let link = await getBuffer(i.url)
+                        XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
+                    } else {
+                        let link = await getBuffer(i.url)
+                        XeonBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })
+                    }
             }
-        }
 
-        }).catch((err) => m.reply(`*Sorry Story Instagram ${text} not found*, ${err}`))
+            }).catch((err) => m.reply(`*Sorry Story Instagram user named ${text} not found*, ${err}`))
         }		
 		case 'joox':
 		case 'jooxdl': {
