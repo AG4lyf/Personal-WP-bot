@@ -13,6 +13,7 @@ const {
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
+const hx = require('hxz-api')
 const {
 	exec,
 	spawn,
