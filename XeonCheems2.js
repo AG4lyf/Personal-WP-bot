@@ -2306,6 +2306,7 @@ In ${clockString(new Date - user.afkTime)}
 
             }).catch((err) => m.reply(`*Sorry Story Instagram user named ${text} not found*, ${err}`))
         }		
+        break
 		case 'joox':
 		case 'jooxdl': {
 			if (!text) return reply(`No Query Title`)
