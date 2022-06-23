@@ -1529,19 +1529,39 @@ In ${clockString(new Date - user.afkTime)}
 					reply(mess.error)
 				})
 			break
-		case 'waifu':
-		case 'husbu':
-		case 'neko':
-		case 'shinobu':
-		case 'megumin':
-		case 'waifus':
-		case 'nekos':
-		case 'trap':
-		case 'blowjob': {
+        case 'ahegao':
+        case 'ass':
+        case 'bdsm':
+        case 'blowjob':
+        case 'cuckold':
+        case 'cum':
+        case 'ero':
+        case 'femdom':
+        case 'foot':
+        case 'gangbang':
+        case 'glasses':
+        case 'hentai':
+        case 'hentaigif':
+        case 'jahy':
+        case 'maid':
+        case 'manga':
+        case 'masturbation':
+        case 'mobilewall':
+        case 'netorare':
+        case 'nsfwneko':
+        case 'sfwneko':
+        case 'orgy':
+        case 'panties':
+        case 'pussy':
+        case 'tentacles':
+        case 'thighs':
+        case 'yuri':
+        case 'zettairyouiki':
+        case 'blowjob': {
 			reply(mess.wait)
 			XeonBotInc.sendMessage(m.chat, {
 				image: {
-					url: api('zenz', '/api/random/' + command, {}, 'apikey')
+					url: api('zenz', '/api/morensfw/' + command, {}, 'apikey')
 				},
 				caption: 'Generated Random ' + command
 			}, {
