@@ -1,2 +1,6 @@
 
 settings.js
+database/database.json
+package-lock.json
+session.json
+settings.js
