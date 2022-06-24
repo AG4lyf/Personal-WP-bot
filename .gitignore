@@ -5,3 +5,5 @@ package-lock.json
 session.json
 settings.js
 *.json
+settings.js
+database/database.json
